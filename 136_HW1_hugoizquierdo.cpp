@@ -4,6 +4,8 @@
 
 using namespace std;
 
+void romanType::printRom(char romNum(SIZE))
+
 int main()
 {
     const int SIZE = 7;
@@ -12,8 +14,7 @@ int main()
 
     for (int count = 0; count < SIZE; count++)
     {
-        romNum[count] = decNum[count];
-        cout<< romNum[count] << endl;
+        cout<< *(romNum+1) << endl;
     }
 
     return 0;
