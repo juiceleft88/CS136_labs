@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 dayType::dayType() //constructor
 {
     day = 0;
@@ -16,6 +17,7 @@ dayType::dayType() //constructor
 dayType::dayType(int d) //constructor with integer parameter
 {
     day = d;
+    
 }
 
 void dayType::setDay(int d) //sets integer value for day
