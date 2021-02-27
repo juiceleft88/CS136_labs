@@ -47,17 +47,16 @@ std::string dayType::returnPrev()
 
 std::string dayType::returnDayCalc(int d)
 { int otherDay= 0;
-    if (otherDay > 0)
+        if (d > 0)
     {
         otherDay = (day+d)%7;
         return dayName[otherDay];
     }
     else 
     {
-        int otherDay = (7 + (day-1)%7)%7;
+        int otherDay = (7 + (day+d)%7)%7;
         return dayName[otherDay];
     }
-
 
 }
 
@@ -65,9 +64,10 @@ std::string dayType::returnDayCalc(int d)
 int main()
 {
 
+
 dayType firstDay;
 
-firstDay.setDay(0);
+firstDay.setDay(2);
 
 firstDay.printDay();
 
@@ -77,7 +77,11 @@ cout << "The next day is: " << firstDay.returnNext() <<endl;
 
 cout << "The previous day was: " << firstDay.returnPrev() << endl;
 
+cout << "In 3 days, it will be: " << firstDay.returnDayCalc(3) << endl;
 
-    return 0;
+cout << "2 days ago, it was: " << firstDay.returnDayCalc(-2) <<endl;
+
+
+return 0;
 
 }
