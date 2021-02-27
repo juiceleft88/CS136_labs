@@ -65,7 +65,7 @@ std::string dayType::returnDayCalc()
 int main()
 {
 
-dayType firstDay;
+dayType::dayType firstDay;
 
 cout << "First day set to Monday" << endl;
 firstDay.setDay(1);

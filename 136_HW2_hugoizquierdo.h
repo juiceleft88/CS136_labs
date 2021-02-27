@@ -8,13 +8,13 @@ class dayType
     public:
 
     dayType();
-    dayType(int day);
-    void setDay(int day);
+    dayType(int d);
+    void setDay(int d);
     void printDay();
-    int returnDay(int day);
+    int returnDay(int d);
     std::string returnNext();
-    std::string returnPrev(int day);
-    std::string returnDayCalc( string dayName[7], int indexDay);
+    std::string returnPrev();
+    std::string returnDayCalc(int d);
 
 
     private:
