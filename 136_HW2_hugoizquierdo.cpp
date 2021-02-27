@@ -45,11 +45,11 @@ std::string dayType::returnPrev()
     return dayName[otherDay];
 }
 
-std::string dayType::returnDayCalc()
-{
-    if (otherDay>0)
+std::string dayType::returnDayCalc(int d)
+{ int otherDay= 0;
+    if (otherDay > 0)
     {
-        int otherDay = (day+d)%7;
+        otherDay = (day+d)%7;
         return dayName[otherDay];
     }
     else 
@@ -67,12 +67,11 @@ int main()
 
 dayType firstDay;
 
-cout << "First day set to Monday" << endl;
-firstDay.setDay(1);
+firstDay.setDay(0);
 
-cout << "This is day number: " << firstDay.setDay() << endl;
+firstDay.printDay();
 
-cout << "The current day is: " << firstDay.printDay();
+cout << "This is day number: " << firstDay.getDay() << endl;
 
 cout << "The next day is: " << firstDay.returnNext() <<endl;
 
