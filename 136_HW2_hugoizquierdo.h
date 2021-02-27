@@ -10,6 +10,7 @@ class dayType
     dayType();
     dayType(int d);
     void setDay(int d);
+    int getDay();
     void printDay();
     int returnDay(int d);
     std::string returnNext();

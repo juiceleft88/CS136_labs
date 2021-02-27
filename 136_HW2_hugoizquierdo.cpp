@@ -65,12 +65,12 @@ std::string dayType::returnDayCalc()
 int main()
 {
 
-dayType::dayType firstDay;
+dayType firstDay;
 
 cout << "First day set to Monday" << endl;
 firstDay.setDay(1);
 
-cout << "This is day number: " << firstDay.getDay() <<endl;
+cout << "This is day number: " << firstDay.setDay() << endl;
 
 cout << "The current day is: " << firstDay.printDay();
 
