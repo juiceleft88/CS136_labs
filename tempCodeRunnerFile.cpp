@@ -1,3 +1,1 @@
-
-        cout << romNum[count] << endl;
-    }
+const int SIZE = 7;

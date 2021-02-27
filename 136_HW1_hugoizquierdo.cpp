@@ -1,10 +1,10 @@
 #include <iostream>
 #include <iomanip>
-//#include "136_HW1_hugoizquierdo.h"
+#include "136_HW1_hugoizquierdo.h"
 
 using namespace std;
 
-void romanType::printRom(char romNum(SIZE))
+void romanType::printRom(char romNum[7])
 {
     cout << "The number in Roman numeral form is: " << romNum << endl;
 }
@@ -15,42 +15,51 @@ int romanType::printDec(int sum)
     return sum;
 }
 
-int romanType::convertRom(char romNum(SIZE))
+int romanType::convertRom(char romNum[])
 {
     int length = 0;
-    length = strlength(romNum);
+    length = strlen(romNum);
     int decTotal = 0;
+    int tally;
     int sum;
 
-    for (int count = 0; count < length; count++)
+    for (int index = 0; index < length; index++)
     {
-        switch (romNum[count])
+        switch (romNum[index])
         {
-            case 'M' : count = 1000;
+            case 'M' : tally = 1000;
             break;
 
-            case 'D' : count = 500;
+            case 'D' : tally = 500;
             break;
 
-            case 'C' : count = 100;
+            case 'C' : tally = 100;
             break;
 
-            case 'L' : count = 50;
+            case 'L' : tally = 50;
             break;
 
-            case 'X' : count = 10;
+            case 'X' : 
+            if (romNum[index +1] == 'L' || romNum[index +1] == 'C' || romNum[index +1] == 'M')
+            tally = (-10);
+            else if (romNum[index -1] == 'L' || romNum[index -1] == 'C' || romNum[index -1] == 'M')
+            tally = 10;
             break;
 
-            case 'V' : count = 5;
+            case 'V' : tally = 5;
             break;
 
-            case 'I' : count = 1;
+            case 'I' : 
+            if (romNum[index +1] == 'V' || romNum[index +1] == 'X' || romNum[index +1] == 'C' || romNum[index +1] == 'M')
+            tally = (-1);
+            if (romNum[index -1] == 'V' || romNum[index -1] == 'X' || romNum[index -1] == 'C' || romNum[index -1] == 'M')
+            tally = 1;
             break;
 
             default: 
             cout << "You did not enter a valid Roman Numeral";
         }
-        dectotal = decTotal + count;
+        decTotal = decTotal + tally;
     }
     cout << decTotal << endl;
     return decTotal;
@@ -61,14 +70,25 @@ int romanType::convertRom(char romNum(SIZE))
 
 int main()
 {
-    const int SIZE = 7;
-    char romNum[SIZE]= {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
-    int decNum[SIZE] = {1, 5, 10, 50, 100, 500, 1000};
+    char romNum[7];
+    romanType x;
+    char selection;
+    int sum;
 
-    for (int count = 0; count < SIZE; count++)
-    {
-        cout<< *(romNum+1) << endl;
-    }
+    cout << "Enter a Roman Numeral: ";
+    cin >> romNum;
+    cout << "\n Enter R to print as a Roman Numeral, or D to print as a Decimal. "  << endl;
+    cin >> selection; 
+    
+    if (selection == 'R')
+        x.printRom(romNum);
+    else if (selection == 'D')
+        x.convertRom(romNum);
+    
+    while (selection != 'D' && selection != 'R')
+        cout << "Please re-enter a valid selection: " << endl;
+        cin >> selection;
 
+    
     return 0;
 }

@@ -3,12 +3,11 @@
 class romanType
 {
     public:
-    void printRom (romNum[SIZE]);
-    int printDec (decNum[SIZE]);
-    int convertRom (int sum);
+    void printRom (char romNum[7]);
+    int printDec (int sum);
+    int convertRom (char romNum[7]);
 
     private:
-    const int SIZE = 7;
-    char romNum[SIZE] = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+    char romNum[7];
     int sum;
 };
