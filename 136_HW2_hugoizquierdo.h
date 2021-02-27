@@ -5,18 +5,19 @@
 
 class dayType
 {
-    dayType();
-    dayType(string dayName[7]);
-
     public:
-    void setDay(string daySet);
-    void printDay(string dayName);
-    int returnDay(int dayReturn);
-    int prevDay(int dayBefore);
-    int returnDay( string dayName[7], int indexDay);
+
+    dayType();
+    dayType(int day);
+    void setDay(int day);
+    void printDay();
+    int returnDay(int day);
+    std::string returnNext();
+    std::string returnPrev(int day);
+    std::string returnDayCalc( string dayName[7], int indexDay);
 
 
     private:
-    string dayName[7];
+    std::string dayName[7] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     int day;
-}
+};
