@@ -1,2 +1,2 @@
 
-    int length = 0;
+    day = 0;

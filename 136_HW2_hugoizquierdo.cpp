@@ -64,7 +64,6 @@ std::string dayType::returnDayCalc(int d)
 int main()
 {
 
-
 dayType firstDay;
 
 firstDay.setDay(2);

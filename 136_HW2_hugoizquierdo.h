@@ -1,6 +1,5 @@
 //Hugo Izquierdo
 //class creation header file
-
 #pragma once
 
 class dayType
@@ -19,6 +18,6 @@ class dayType
 
 
     private:
-    std::string dayName[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    std::string dayName[7] = = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     int day;
 };
