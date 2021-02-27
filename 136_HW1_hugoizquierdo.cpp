@@ -1,3 +1,7 @@
+// Hugo Izquierdo
+//886895301
+//This program will store a roman numeral, and display it as either a decimal number or a roman numeral.
+
 #include <iostream>
 #include "136_HW1_hugoizquierdo.h"
 
@@ -74,17 +78,17 @@ int main()
     char selection;
     int sum;
 
-    cout << "Enter a Roman Numeral: ";
+    cout << "Enter a Roman Numeral (CAPITAL LETTERS ONLY), and this program will convert it to decimal form, or display as a Roman Numeral: ";
     cin >> romNum;
-    cout << "\n Enter R to print as a Roman Numeral, or D to print as a Decimal. "  << endl;
+    cout << "\n Press R to print as a Roman Numeral, or D to print as a Decimal. "  << endl;
     cin >> selection; 
     
-    if (selection == 'R')
+    if (selection == 'R' || selection == 'r')
         x.printRom(romNum);
-    else if (selection == 'D')
+    else if (selection == 'D' || selection == 'd')
         x.convertRom(romNum);
     
-    while (selection != 'D' && selection != 'R')
+    while ((selection != 'D' && selection != 'd') && (selection != 'R' && selection != 'r'))
         cout << "Please re-enter a valid selection: " << endl;
         cin >> selection;
 

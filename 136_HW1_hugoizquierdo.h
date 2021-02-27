@@ -1,3 +1,6 @@
+//Hugo Izquierdo
+//header file for creating the class
+
 #pragma once
 
 class romanType
