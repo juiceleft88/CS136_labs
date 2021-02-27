@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "136_HW1_hugoizquierdo.h"
 
 using namespace std;
@@ -40,9 +39,9 @@ int romanType::convertRom(char romNum[])
             break;
 
             case 'X' : 
-            if (romNum[index +1] == 'L' || romNum[index +1] == 'C' || romNum[index +1] == 'M')
+            if (romNum[index] && romNum[index +1] == 'L' || romNum[index +1] == 'C' || romNum[index +1] == 'M')
             tally = (-10);
-            else if (romNum[index -1] == 'L' || romNum[index -1] == 'C' || romNum[index -1] == 'M')
+            else 
             tally = 10;
             break;
 
@@ -50,9 +49,9 @@ int romanType::convertRom(char romNum[])
             break;
 
             case 'I' : 
-            if (romNum[index +1] == 'V' || romNum[index +1] == 'X' || romNum[index +1] == 'C' || romNum[index +1] == 'M')
+            if (romNum[index] && romNum[index +1] == 'V' || romNum[index +1] == 'X' || romNum[index +1] == 'C' || romNum[index +1] == 'M')
             tally = (-1);
-            if (romNum[index -1] == 'V' || romNum[index -1] == 'X' || romNum[index -1] == 'C' || romNum[index -1] == 'M')
+            else
             tally = 1;
             break;
 

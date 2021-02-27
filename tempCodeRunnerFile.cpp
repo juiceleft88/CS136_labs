@@ -1,1 +1,2 @@
-const int SIZE = 7;
+
+    int length = 0;
